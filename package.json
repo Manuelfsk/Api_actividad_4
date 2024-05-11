@@ -1,0 +1,11 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "actividad 4, api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manuel Fernando Fonseca Avila",
+  "license": "ISC"
+}
