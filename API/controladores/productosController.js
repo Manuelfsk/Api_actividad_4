@@ -5,6 +5,12 @@ let productosController={}
 //11 crear la conexion con el controllador .Save
 productosController.save = function(request,response){
 
+    //16 se crear la captura de objetos con la variable post{} dentro de prodController.save
+    let post = {
+        cod_prod: request.body.cod_prod,
+        nombre: request.body.nombre
+        //16.1 agregar los objetos que sean necesarios para el ejercico Act_4
+    }
 }
 
 
@@ -16,7 +22,8 @@ productosController.save = function(request,response){
 
 
 
+
+
+
 //10 modelo de exportar prductoscontroller
-
-
 module.exports.productosController = productosController
