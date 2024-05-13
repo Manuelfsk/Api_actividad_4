@@ -10,6 +10,12 @@ let bodyParser = require("body-parser")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
+//19 creacion de la base de datos para productosController
+global.productos = []
+//20 creacion de la base de datos para categoriasController
+global.categorias = []
+
+
 //7 se crea la conunicacion entre el arcgcmdivo app.js y routes.js
 require("./routes.js")
 
