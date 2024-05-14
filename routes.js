@@ -5,7 +5,7 @@ let categoriasController = require("./API/controladores/categoriasController.js"
 
 //8 se crea la ruta tipo post con el tipo de ruta que se quiere especificar: ej. "/productos/save"
 app.post("/productos/save", function(request,response){
-// 15 iniciar proceso de captura de datos
+// 15 iniciar proceso de captura de datos. debe ser igual al punto 11 .save
     productosController.save(request,response)
 
 })
