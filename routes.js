@@ -15,3 +15,7 @@ app.post("/categorias/save", function(request, response){
 // 15.1 iniciar proceso de captura de datos
     categoriasController.buscarcod_cat(request,response)
 })
+
+app.get("/productos/listar", function(request,response){
+    productosController.listar(request,response)
+})

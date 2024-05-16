@@ -22,6 +22,7 @@ categoriasController.buscarcod_cat = function (request, response) {
         response.json({ state: false, mensaje: "El campo cod_cat es obligatorio." })
         return false
     }
+    
     //max 5 car.
     if(post.cod_cat.length >= 6){
         response.json({state: false, mensaje:"El cod_cat es de maximo 5 caracteres."})
@@ -34,13 +35,15 @@ categoriasController.buscarcod_cat = function (request, response) {
     //max 50 
     if(post.nombre.length >= 51){
         response.json({state: false, mensaje:"El nombre es de maximo 50 caracteres."})
+        return false
     }
     //min 3 
     if(post.nombre.length <=2 ){
         response.json({state: false, mensaje:"El nombre es de minimo 3 caracteres"})
+        return false
     }
     //solo numeros
-
+    
 
 
     //18.1 aplicacion de las credenciales de validacion de espacios obligatorios estado

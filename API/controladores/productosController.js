@@ -41,24 +41,13 @@ if(post.nombre == undefined || post.nombre == null || post.nombre.trim() == ""){
     return false
 }
  //max 50 
- if(post.nombre.length >= 51){
+if(post.nombre.length >= 51){
     response.json({state: false, mensaje:"El nombre es de maximo 50 caracteres."})
 }
 //min 3 
 if(post.nombre.length <=3 ){
     response.json({state: false, mensaje:"El nombre es de minimo 4 caracteres"})
 }
-
-productosModel.busca_cod_cat(post, function(busqueda_cod_cat) {
-    if(busqueda_cod_cat.ubicacion >= 0){
-        response.json({ state: false, mensaje:"Código cod_cat, existente en la lista de categoría" })
-        return false
-    }else{
-        response.json({state: true, mensaje:"No se acepta cod_cat no existente el la lista categorias"})
-        return false
-        
-    }
-})
 productosModel.buscarCod_prod(post, function(respuesta_cod_prod){
     if (respuesta_cod_prod.buscar_prod == -1){
         productosModel.crearCod_prod(post, function(resp_Guardar_prod){
@@ -76,11 +65,41 @@ productosModel.buscarCod_prod(post, function(respuesta_cod_prod){
 
     }
 })
+productosModel.busca_cod_cat(post, function(busqueda_cod_cat) {
+    if(busqueda_cod_cat.ubicacion >= 0){
+        response.json({ state: true, mensaje:"Código cod_cat, existente en la lista de categoría" })
+        return false
+    }else{
+        response.json({state: false, mensaje:"No se acepta cod_cat no existente el la lista categorias"})
+        return false
+        
+    }
+})
 
 
 
 
 }
+
+// productosController.listar = function(request,response){
+//     let post = {
+//         cod_cat: request.params.cod_cat ,
+//         cod_prod: request.params.cod_prod,
+//         nombre: request.params.nombre
+
+//     }
+
+// //     response.send(<p>+ +</p>)
+// productosModel.listarProductos(post, function(listar_productos){
+//     if(mostrar_prod.busca_cod_cat >= 0){
+//         response.json({productos : productos})
+//         return false
+//     }
+    
+
+// })
+
+// }
 
 
 
