@@ -1,4 +1,4 @@
-const { productosModel } = require("./productosModel")
+
 
 //12.1 crear el objeto categoriasModel como variable
 let categoriasModel = {}

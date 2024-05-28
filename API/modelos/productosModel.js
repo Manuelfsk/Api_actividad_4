@@ -19,7 +19,7 @@ productosModel.crearCod_prod = function(post, callback){
     return callback({ state: true})
 }
 
-// productosModel.listarProductos =function(post, callback){
+// productosModel.listar =function(post, callback){
 //     let mostrar_prod = productos.findIndex((item) => item.cod_cat == post.busca_cod_cat, item.cod_prod == post.cod_prod, item.nombre == post.nombre )
 //     return callback ({ buscar_prod : buscar_prod })
 // }

@@ -19,12 +19,12 @@ productosController.save = function(request,response){
 
 //18 aplicacion de las credenciales de validacion de espacios obligatorios cod_cat
 if(post.cod_cat == undefined || post.cod_cat == null || post.cod_cat.trim() == ""){
-    response.json({state: false, mensaje:"El campo cod_cat es obligatorio."})
+    response.json({state: false, mensaje: "el campo cod_cat es obligatorio", campo: "cod_cat"})
     return false
 }
 //max 5 car.
 if(post.cod_cat.length >= 6){
-    response.json({state: false, mensaje:"El cod_cat es de maximo 5 caracteres."})
+    response.json({state: false, mensaje: "el campo cod_cat debe tener maximo 5 caracteres" ,campo: "cod_cat"})
 }
 //18 aplicacion de las credenciales de validacion de espacios obligatorios cod_prod
 if(post.cod_prod == undefined || post.cod_prod == null || post.cod_prod.trim() == ""){
@@ -90,7 +90,7 @@ productosModel.busca_cod_cat(post, function(busqueda_cod_cat) {
 //     }
 
 // //     response.send(<p>+ +</p>)
-// productosModel.listarProductos(post, function(listar_productos){
+// productosModel.listar(post, function(resuesta){
 //     if(mostrar_prod.busca_cod_cat >= 0){
 //         response.json({productos : productos})
 //         return false
